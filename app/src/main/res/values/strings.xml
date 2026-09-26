@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Livora</string>
+    <string name="resort_name">Corbett The Vedant By Livora</string>
+    <string name="resort_tagline">A quiet luxury retreat at the edge of Jim Corbett</string>
+    <string name="notif_channel_alerts">Resort alerts</string>
+    <string name="notif_channel_alerts_desc">New guest messages, bookings and room service requests</string>
+    <string name="notif_channel_guest">Stay updates</string>
+    <string name="notif_channel_guest_desc">Updates about your stay and replies from the resort</string>
+    <string name="cd_back">Back</string>
+    <string name="cd_close">Close</string>
+    <string name="action_retry">Try again</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_continue">Continue</string>
+    <string name="action_sign_out">Sign out</string>
+    <string name="waking_server">Waking up the server, this can take up to a minute the first time…</string>
+    <string name="pay_at_property">Pay at property. Free cancellation until %1$d hours before check-in.</string>
+    <string name="gst_note">All prices are in INR and inclusive of GST.</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_rooms">Rooms</string>
+    <string name="nav_stays">My Stays</string>
+    <string name="nav_messages">Messages</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_bookings">Bookings</string>
+    <string name="nav_housekeeping">Housekeeping</string>
+    <string name="nav_requests">Requests</string>
+    <string name="nav_inbox">Inbox</string>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Corbett" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/forest_950</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:colorBackground">@color/forest_950</item>
+        <item name="android:textColorPrimary">@color/cream</item>
+    </style>
+
+    <style name="Theme.Corbett.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/forest_950</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_icon</item>
+        <item name="postSplashScreenTheme">@style/Theme.Corbett</item>
+    </style>
+</resources>

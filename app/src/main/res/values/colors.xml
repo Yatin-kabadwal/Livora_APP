@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="forest_950">#07110c</color>
+    <color name="forest_900">#0b1a13</color>
+    <color name="forest_800">#10261b</color>
+    <color name="forest_700">#17382a</color>
+    <color name="gold">#d9b76a</color>
+    <color name="gold_light">#f0d9a0</color>
+    <color name="cream">#f4efe2</color>
+    <color name="ic_launcher_background">#0b1a13</color>
+</resources>
