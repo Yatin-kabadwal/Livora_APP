@@ -32,7 +32,7 @@ android {
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "com.livora.corbett.vedant"
+        applicationId = "com.livora.corbett"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
