@@ -32,6 +32,7 @@ import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.Chat
 import androidx.compose.material.icons.filled.Directions
 import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -240,8 +241,26 @@ fun ProfileScreen(
                 Text(settings.resortName, style = MaterialTheme.typography.bodyMedium, color = cs.onSurfaceVariant)
                 settings.address?.takeIf { it.isNotBlank() }?.let { Text(it, style = MaterialTheme.typography.bodySmall, color = cs.onSurfaceVariant) }
                 Spacer(Modifier.height(8.dp))
-                ContactRow(Icons.Filled.Call, settings.phone) { Intents.call(ctx, settings.phone) }
-                ContactRow(Icons.Filled.Chat, "WhatsApp us") { Intents.whatsapp(ctx, settings.whatsapp) }
+                ContactRow(
+                    Icons.Filled.Call,
+                    "Front desk • ${settings.phone}"
+                ) {
+                    Intents.call(ctx, settings.phone)
+                }
+
+                ContactRow(
+                    Icons.Filled.Phone,
+                    "Reservations • ${settings.phoneSecondary}"
+                ) {
+                    Intents.call(ctx, settings.phoneSecondary)
+                }
+
+                ContactRow(
+                    Icons.Filled.Chat,
+                    "WhatsApp reservations"
+                ) {
+                    Intents.whatsapp(ctx, settings.whatsapp)
+                }
                 ContactRow(Icons.Filled.Email, settings.email) { Intents.email(ctx, settings.email, "Enquiry") }
                 ContactRow(Icons.Filled.Directions, "Get directions") { Intents.openUrl(ctx, settings.mapsUrl) }
                 Spacer(Modifier.height(6.dp))

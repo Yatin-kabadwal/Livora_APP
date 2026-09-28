@@ -37,6 +37,7 @@ import androidx.compose.material.icons.filled.DirectionsCar
 import androidx.compose.material.icons.filled.Hiking
 import androidx.compose.material.icons.filled.LocalFireDepartment
 import androidx.compose.material.icons.filled.Park
+import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material.icons.filled.Restaurant
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.WbTwilight
@@ -306,7 +307,12 @@ fun HomeScreen(
                 Column(Modifier.padding(horizontal = 16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                     Text("Get in touch", style = MaterialTheme.typography.headlineSmall)
                     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                        QuickAction("Call", Icons.Filled.Call, Modifier.weight(1f)) { Intents.call(ctx, settings.phone) }
+                        QuickAction("Front Desk", Icons.Filled.Call, Modifier.weight(1f)) {
+                            Intents.call(ctx, settings.phone)
+                        }
+                        QuickAction("Reservations", Icons.Filled.Phone, Modifier.weight(1f)) {
+                            Intents.call(ctx, settings.phoneSecondary)
+                        }
                         QuickAction("WhatsApp", Icons.Filled.Chat, Modifier.weight(1f)) { Intents.whatsapp(ctx, settings.whatsapp, "Hello! I'd like to know more about ${settings.resortName}.") }
                         QuickAction("Directions", Icons.Filled.Directions, Modifier.weight(1f)) { Intents.openUrl(ctx, settings.mapsUrl) }
                     }

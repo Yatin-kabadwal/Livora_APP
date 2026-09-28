@@ -1,25 +1,57 @@
-# ---- General ----
+# =========================================================
+# GENERAL
+# =========================================================
 -keepattributes *Annotation*, InnerClasses, Signature, Exceptions, EnclosingMethod, RuntimeVisibleAnnotations, AnnotationDefault
 -keepattributes SourceFile, LineNumberTable
 -renamesourcefileattribute SourceFile
 
-# ---- kotlinx.serialization ----
--keepclassmembers class kotlinx.serialization.json.** { *** Companion; }
--keepclasseswithmembers class kotlinx.serialization.json.** { kotlinx.serialization.KSerializer serializer(...); }
+
+# =========================================================
+# KOTLINX SERIALIZATION
+# =========================================================
+
+# Generated serializers
 -keep,includedescriptorclasses class com.livora.corbett.**$$serializer { *; }
--keepclassmembers class com.livora.corbett.** { *** Companion; }
--keepclasseswithmembers class com.livora.corbett.** { kotlinx.serialization.KSerializer serializer(...); }
--keep class com.livora.corbett.data.api.** { *; }
+
+# Companion objects used by serialization
+-keepclassmembers class com.livora.corbett.** {
+    *** Companion;
+}
+
+# Generated serializer() methods
+-keepclasseswithmembers class com.livora.corbett.** {
+    kotlinx.serialization.KSerializer serializer(...);
+}
+
 -dontwarn kotlinx.serialization.**
 
-# ---- Retrofit / OkHttp / Okio ----
+
+# =========================================================
+# RETROFIT
+# =========================================================
+
+-keepattributes Signature
+-keepattributes Exceptions
+-keepattributes RuntimeVisibleAnnotations
+-keepattributes RuntimeVisibleParameterAnnotations
+-keepattributes AnnotationDefault
+
 -keep,allowobfuscation,allowshrinking interface retrofit2.Call
 -keep,allowobfuscation,allowshrinking class retrofit2.Response
 -keep,allowobfuscation,allowshrinking class kotlin.coroutines.Continuation
+
+# Keep Retrofit annotated API methods
 -keepclassmembers,allowshrinking,allowobfuscation interface * {
     @retrofit2.http.* <methods>;
 }
+
 -dontwarn retrofit2.**
+
+
+# =========================================================
+# OKHTTP / OKIO
+# =========================================================
+
 -dontwarn okhttp3.**
 -dontwarn okio.**
 -dontwarn javax.annotation.**
@@ -27,12 +59,31 @@
 -dontwarn org.bouncycastle.**
 -dontwarn org.openjsse.**
 
-# ---- Socket.IO / Engine.IO ----
+
+# =========================================================
+# SOCKET.IO / ENGINE.IO
+# =========================================================
+
 -keep class io.socket.** { *; }
+
 -dontwarn io.socket.**
 
-# ---- Coil ----
+
+# =========================================================
+# COIL
+# =========================================================
+
 -dontwarn coil.**
 
-# ---- Hilt / WorkManager entry points ----
+
+# =========================================================
+# HILT
+# =========================================================
+
+
+# =========================================================
+# WORKMANAGER
+# =========================================================
+
+# Your Worker classes
 -keep class com.livora.corbett.work.** { *; }

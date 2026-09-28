@@ -29,12 +29,12 @@ val keystoreProps = Properties().apply {
 
 android {
     namespace = "com.livora.corbett"
-    compileSdk = 35
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.livora.corbett.vedant"
         minSdk = 24
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0.0"
     }
@@ -75,17 +75,18 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
         isCoreLibraryDesugaringEnabled = true
     }
-    kotlinOptions {
-        jvmTarget = "17"
+    kotlin {
+        compilerOptions {
+            jvmTarget.set(
+                org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
+            )
+        }
     }
     buildFeatures {
         compose = true
         buildConfig = true
     }
-    lint {
-        abortOnError = false
-        checkReleaseBuilds = false
-    }
+
     packaging {
         resources {
             excludes += setOf("/META-INF/{AL2.0,LGPL2.1}", "/META-INF/INDEX.LIST", "/META-INF/io.netty.versions.properties")
