@@ -5,6 +5,8 @@
 -keepattributes SourceFile, LineNumberTable
 -renamesourcefileattribute SourceFile
 
+-dontwarn com.google.errorprone.annotations.Immutable
+
 
 # =========================================================
 # KOTLINX SERIALIZATION
